@@ -19,16 +19,34 @@
 		}
 		
 		#wrapper {
+			width: 60%;
+			height: 800px;
+			background: url(images/new-grid-test.jpg);
+			background-repeat: no-repeat;
+			margin-left: 100px;
+			margin-top: 100px;
+		}
+		
+		#shelf-wrapper {
 			margin: 0;
-			width: 900px;
+			width: 300px;
 			float: right;
+		}
+
+		
+		#minus-button {
+		position: fixed;
+			top: 400px;
+			right: 0px;
+			float: right;
+			z-index: 10000;
 		}
 		
 	.container {
 	background: url(images/test_shelf.jpg);
 		height: 800px;
 		background-repeat: repeat-y;
-		margin: 40px 0px;
+		margin: 0px 0px;
 		text-align: center;
 		width: 1000px;
 	}
@@ -48,54 +66,55 @@
 	</style>
 	
 	<script type="text/javascript">
-		$( document ).ready(function() {
+		$(document).ready(function() {
 			
-		
-		
-	$('button').click(function(){
-    var after = $('#image')[0];
-    after.src = white2transparent(after);
-})
-
-function white2transparent(img)
-{
-    var c = document.createElement('canvas');
-    
-    var w = img.width, h = img.height;
-    
-    c.width = w;
-    c.height = h;
-        
-    var ctx = c.getContext('2d');
-    
-    ctx.width = w;
-    ctx.height = h;
-    ctx.drawImage(img, 0, 0, w, h);
-    var imageData = ctx.getImageData(0,0, w, h);
-    var pixel = imageData.data;
-    
-    var r=0, g=1, b=2,a=3;
-    for (var p = 0; p<pixel.length; p+=4)
-    {
-      if (
-          pixel[p+r] == 255 &&
-          pixel[p+g] == 255 &&
-          pixel[p+b] == 255) // if white then change alpha to 0
-      {pixel[p+a] = 0;}
+			$('#minus-button').click(function() {
+				if ($('#minus-button img').attr('src') == 'images/minus.jpg') {
+        $('#minus-button img').attr('src','images/plus.jpg');
+    } else {
+        $('#minus-button img').attr('src','images/minus.jpg');
     }
-    
-    ctx.putImageData(imageData,0,0);
-    
-    return c.toDataURL('image/png');
-}
-
-	
+			
+				
+				$('#wrapper').toggle();
+				
+			});
+			
+			$('.draggable').mouseup(function() {
+				
+				var offset = $(this).offset().left;
+				
+				
+			if(offset <= 600) {
+				$(this).css('position','absolute');
+				$(this).css('height','500');
+			}
+				
+			else {
+					$(this).css('position','relative');
+				$(this).css('height','initial');
+				
+			}
+		});
+			
+		});
 	</script>
 	
 </head>
 <body>
+	
+		<div id="minus-button">
+	<img src="images/minus.jpg">
+	
+	</div>
+	<div id="wrapper"> 
+	
+	<div id="main-screen">
 
-	<div id="wrapper">
+	
+	</div>
+
+	<div id="shelf-wrapper">
 	
 <div class="container">
 	<div class="row"><img class="draggable" src="images/1.jpg"><img class="draggable" src="images/2.jpg"><img class="draggable" src="images/3.jpg"></div>
@@ -103,6 +122,8 @@ function white2transparent(img)
 	<div class="row"><img class="draggable" src="images/7.jpg"><img class="draggable" src="images/8.jpg"><img class="draggable" src="images/9.jpg"></div>
 	</div>
 	</div>
+		
+		</div>
 </body>
 
 </html>
