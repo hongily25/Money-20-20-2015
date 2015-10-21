@@ -16,48 +16,49 @@
 	<style>
 		body {
 			background-color: #000;
+			overflow-x: hidden;
 		}
 		
 		#wrapper {
-			width: 60%;
-			height: 800px;
+			width: 1000px;
+			height: 660px;
 			background: url(images/new-grid-test.jpg);
 			background-repeat: no-repeat;
-			margin-left: 50px;
-			margin-top: 50px;
+			margin: 20px;
 		}
 		
 		#shelf-wrapper {
 			margin: 0;
-			width: 300px;
+			width: 400px;
 			float: right;
 		}
 
 		
 		#minus-button {
 		position: fixed;
-			top: 400px;
+			top: 300px;
 			right: 0px;
 			float: right;
-			z-index: 10000;
+			z-index: 3;
 			border-top-left-radius: 10px;
 			border-bottom-left-radius: 10px;
 		}
 		
 	.container {
 	background: url(images/test_shelf.jpg);
-		height: 800px;
+		height: 600px;
 		background-repeat: repeat-y;
 		margin: 0px 0px;
-		text-align: center;
-		width: 1000px;
+		text-align: left;
+		width: 660px;
+		margin-left: 420px;
 	}
 		
 		.container .row {
 			position: relative;
-			top: 20px;
-			padding-left: 0;
-			padding-bottom: 130px;
+			top: 10px;
+			padding-left: 20px;
+			padding-bottom: 60px;
 			
 		}
 		
@@ -87,15 +88,16 @@
 				var offset = $(this).offset().left;
 				
 				
-			if(offset <= 600) {
+			if(offset <= 700) {
+				alert(offset);
 				$(this).css('position','absolute');
-				$(this).css('height','500');
+				$(this).css('height','300');
 			}
 				
 			else {
-					$(this).css('position','relative');
+				$(this).css('position','relative');
 				$(this).css('height','initial');
-				
+				alert('Else offset: ' + offset);
 			}
 		});
 			
