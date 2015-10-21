@@ -19,10 +19,13 @@
 			overflow-x: hidden;
 		}
 		
+		.grid-img {
+				background: url(images/new-grid-test.jpg);
+		}
+		
 		#wrapper {
 			width: 1000px;
 			height: 660px;
-			background: url(images/new-grid-test.jpg);
 			background-repeat: no-repeat;
 			margin: 20px;
 		}
@@ -44,8 +47,12 @@
 			border-bottom-left-radius: 10px;
 		}
 		
-	.container {
+		.shelf-img {
+			
 	background: url(images/test_shelf.jpg);
+		}
+		
+	#container {
 		height: 600px;
 		background-repeat: repeat-y;
 		margin: 0px 0px;
@@ -54,7 +61,7 @@
 		margin-left: 420px;
 	}
 		
-		.container .row {
+		#container .row {
 			position: relative;
 			top: 10px;
 			padding-left: 20px;
@@ -62,8 +69,11 @@
 			
 		}
 		
-		.container .row img {
+		#container .row img {
 			padding:0 10px;	
+		}
+		
+		.bigIMG {
 		}
 	
 	</style>
@@ -78,8 +88,10 @@
         $('#minus-button img').attr('src','images/minus.jpg');
     }
 			
-				
-				$('#wrapper').toggle();
+				$('#wrapper').toggleClass("grid-img");
+				$('#container').toggleClass("shelf-img");
+				$('img:not(.bigIMG)').toggle();
+		
 				
 			});
 			
@@ -89,7 +101,7 @@
 				
 				
 			if(offset <= 700) {
-				alert(offset);
+				$(this).addClass('bigIMG');
 				$(this).css('position','absolute');
 				$(this).css('height','300');
 			}
@@ -108,19 +120,15 @@
 <body>
 	
 		<div id="minus-button">
-	<img src="images/minus.jpg">
+	<img src="images/minus.jpg" class="bigIMG">
 	
 	</div>
-	<div id="wrapper"> 
+	<div id="wrapper" class="grid-img"> 
 	
-	<div id="main-screen">
 
+	<div id="shelf-wrapper" >
 	
-	</div>
-
-	<div id="shelf-wrapper">
-	
-<div class="container">
+<div id="container" class="shelf-img">
 	<div class="row"><img class="draggable" src="images/1.jpg"><img class="draggable" src="images/2.jpg"><img class="draggable" src="images/3.jpg"></div>
 	<div class="row"><img class="draggable" src="images/4.jpg"><img class="draggable" src="images/5.jpg"><img class="draggable" src="images/6.jpg"></div>
 	<div class="row"><img class="draggable" src="images/7.jpg"><img class="draggable" src="images/8.jpg"><img class="draggable" src="images/9.jpg"></div>
