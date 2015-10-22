@@ -75,6 +75,20 @@
 		
 		.bigIMG {
 		}
+		
+		.hidden {
+			display: none;
+		}
+		
+		p {
+			color: #FFF;
+			width: 300px;
+			height: 100px;
+		}
+		
+		.row div {
+			display: inline;
+		}
 	
 	</style>
 	
@@ -104,11 +118,12 @@
 				$(this).addClass('bigIMG');
 				$(this).css('position','absolute');
 				$(this).css('height','300');
+				$(this).next().removeClass("hidden");
 			}
-				
 			else {
 				$(this).css('position','relative');
 				$(this).css('height','initial');
+				$(this).next().addClass("hidden");
 				alert('Else offset: ' + offset);
 			}
 		});
@@ -129,7 +144,7 @@
 	<div id="shelf-wrapper" >
 	
 <div id="container" class="shelf-img">
-	<div class="row"><img class="draggable" src="images/1.jpg"><img class="draggable" src="images/2.jpg"><img class="draggable" src="images/3.jpg"></div>
+	<div class="row"><div class="draggable"><img src="images/1.jpg"><p class="hidden">This is text</p></div><img class="draggable" src="images/2.jpg"><img class="draggable" src="images/3.jpg"></div>
 	<div class="row"><img class="draggable" src="images/4.jpg"><img class="draggable" src="images/5.jpg"><img class="draggable" src="images/6.jpg"></div>
 	<div class="row"><img class="draggable" src="images/7.jpg"><img class="draggable" src="images/8.jpg"><img class="draggable" src="images/9.jpg"></div>
 	</div>
