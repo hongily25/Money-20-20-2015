@@ -1,0 +1,77 @@
+body {
+			background-color: #000;
+			overflow-x: hidden;
+		}
+		
+		.grid-img {
+				background: url(images/new-grid-test.jpg);
+		}
+		
+		#wrapper {
+			width: 1000px;
+			height: 660px;
+			background-repeat: no-repeat;
+			margin: 0px;
+		}
+		
+		#shelf-wrapper {
+			margin: 0;
+			width: 400px;
+			float: right;
+		}
+
+		
+		#minus-button {
+		position: fixed;
+			top: 300px;
+			right: 0px;
+			float: right;
+			z-index: 3;
+			border-top-left-radius: 10px;
+			border-bottom-left-radius: 10px;
+		}
+		
+		.shelf-img {
+			
+	background: url(images/test_shelf.jpg);
+		}
+		
+	#container {
+		height: 600px;
+		background-repeat: repeat-y;
+		margin: 0px 0px;
+		text-align: left;
+		width: 660px;
+		margin-left: 400px;
+	}
+		
+		#container .row {
+			position: relative;
+			top: 10px;
+			padding-left: 20px;
+			padding-bottom: 60px;
+			
+		}
+		
+		#container .row img {
+			padding:0 10px;	
+			height: 60px;
+			width: 60px;
+		}
+		
+		.bigIMG {
+		}
+		
+		.hidden {
+			display: none;
+		}
+		
+		p {
+			color: #FFF;
+			width: 300px;
+			height: 100px;
+		}
+		
+		.row div {
+			display: inline;
+		}

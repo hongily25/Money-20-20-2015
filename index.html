@@ -20,133 +20,10 @@ creative - out of the box
 valuable impact
 design - ux/ui
 
--->
-	<style>
-		body {
-			background-color: #000;
-			overflow-x: hidden;
-		}
-		
-		.grid-img {
-				background: url(images/new-grid-test.jpg);
-		}
-		
-		#wrapper {
-			width: 1000px;
-			height: 660px;
-			background-repeat: no-repeat;
-			margin: 0px;
-		}
-		
-		#shelf-wrapper {
-			margin: 0;
-			width: 400px;
-			float: right;
-		}
+4803 breakout room mastercard 3pm
 
-		
-		#minus-button {
-		position: fixed;
-			top: 300px;
-			right: 0px;
-			float: right;
-			z-index: 3;
-			border-top-left-radius: 10px;
-			border-bottom-left-radius: 10px;
-		}
-		
-		.shelf-img {
-			
-	background: url(images/test_shelf.jpg);
-		}
-		
-	#container {
-		height: 600px;
-		background-repeat: repeat-y;
-		margin: 0px 0px;
-		text-align: left;
-		width: 660px;
-		margin-left: 400px;
-	}
-		
-		#container .row {
-			position: relative;
-			top: 10px;
-			padding-left: 20px;
-			padding-bottom: 60px;
-			
-		}
-		
-		#container .row img {
-			padding:0 10px;	
-			height: 60px;
-			width: 60px;
-		}
-		
-		.bigIMG {
-		}
-		
-		.hidden {
-			display: none;
-		}
-		
-		p {
-			color: #FFF;
-			width: 300px;
-			height: 100px;
-		}
-		
-		.row div {
-			display: inline;
-		}
-	
-	</style>
-	
-	<script type="text/javascript">
-		$(document).ready(function() {
-			
-			$('#minus-button').click(function() {
-				if ($('#minus-button img').attr('src') == 'images/minus.jpg') {
-        $('#minus-button img').attr('src','images/plus.jpg');
-					var test = $('.bigIMG').css('height') ;
-					//alert('test: ' + test);
-					$('img:not(.bigIMG)').toggle();
-					
-    } else {
-        $('#minus-button img').attr('src','images/minus.jpg');
-    }
-			
-				$('#wrapper').toggleClass("grid-img");
-				$('#container').toggleClass("shelf-img");
-				
-				
-		
-				
-			});
-			
-			$('.draggable').mouseup(function() {
-				
-				var offset = $(this).offset().left;
-				
-				
-			if(offset <= 700) {
-			//	alert('Regular offset: ' + offset);
-				$(this).addClass('bigIMG');
-				$(this).css('position','absolute');
-				$(this).css('height','initial');
-				$(this).css('width','initial');
-				var test2 = $(this).css('height');
-				//alert('test2: ' + test2);
-			}
-			else {
-				$(this).css('position','relative');
-				$(this).css('height','initial');
-				//alert('Else offset: ' + offset);
-			}
-		});
-			
-		});
-	</script>
+-->
+
 	
 </head>
 <body>
@@ -170,7 +47,7 @@ design - ux/ui
 <div id="container" class="shelf-img">
 	<div class="row">
 		<img src="images/1888368.jpeg" class="draggable">
-		<img class="draggable" src="images/2.jpg"><img class="draggable" src="images/3.jpg">
+		<img class="draggable" src="images/926965.jpeg"><img class="draggable" src="images/3.jpg">
 	</div>
 	<div class="row"><img class="draggable" src="images/4.jpg"><img class="draggable" src="images/5.jpg"><img class="draggable" src="images/6.jpg">
 	</div>
