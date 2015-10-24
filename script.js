@@ -1,5 +1,4 @@
-
-		$(document).ready(function() {
+$(document).ready(function() {
 			
 			$('#minus-button').click(function() {
 				if ($('#minus-button img').attr('src') == 'images/minus.jpg') {
@@ -36,8 +35,8 @@
 			}
 			else {
 				$(this).css('position','relative');
-				$(this).css('height','100px');
-				$(this).css('width','100px');
+				$(this).css('height','60px');
+				$(this).css('width','60px');
 				//alert('Else offset: ' + offset);
 			}
 		});
