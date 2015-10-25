@@ -38,6 +38,7 @@ $(document).ready(function() {
 				alert('Regular offset: ' + offset);
 				$(this).addClass('bigIMG');
 				$(this).css('position','absolute');
+				$(this).css('top','0');
 				$(this).css('height','initial');
 				$(this).css('width','initial');
 				var test2 = $(this).css('height');
@@ -57,17 +58,55 @@ $(document).ready(function() {
 	$('#hands-free-mode img').click( function() {
 		if (handsFreeMode) {
 		handsFreeMode = false;
-			
+			$('img:not(#myo-img)').css('display','initial');
+				
+					$('#wrapper').addClass("grid-img");
+				$('#container').addClass("shelf-img");
 		}
 		else 
 		{ handsFreeMode = true;
-		 /* LOAD FIRST IMAGE */
+		 		/* ENTER HANDS FREE MODE: Hide everything except one image */
+				$('img:not(#myo-img)').css('display','none');
+				
+					$('#wrapper').removeClass("grid-img");
+				$('#container').removeClass("shelf-img");
+		 		/* LOAD FIRST IMAGE */
+		 	window.setInterval(function(){
+				var xhr = new XMLHttpRequest();
+				xhr.onreadystatechange = function() {
+						if (xhr.readyState == 4) {
+								var gesture = xhr.responseText;
+								if(gesture.indexOf('right') >= 0){
+									console.log(gesture);
+									/* LOAD NEXT IMAGE */
+								}else if(gesture.indexOf('left') >= 0){
+									console.log(gesture);
+									/* LOAD NEXT IMAGE */
+								}else if(gesture.indexOf('select') >= 0){
+									console.log(gesture);
+									/* BUY ITEM */
+								}else if(gesture.indexOf('back') >= 0){
+									console.log(gesture);
+									handsFreeMode = false;
+									/* EXIT HANDS FREE */
+									/* Restore everything */
+														$('img').css("display","initial");
+					$('#wrapper').addClass('grid-img');
+				$('#container').addClass('shelf-img');
+									
+								}
+						}
+				}
+				xhr.open('GET', 'http://localhost:5000/myo', true);
+				xhr.send(null);
+			} ,500);
 		};
 	});
-	
-	$(document).click( function() {
-		if ( handsFreeMode == true) { /* LOAD NEXT IMAGE */ };		
-		
+	document.getElementsByTagName('body')[0].addEventListener('onwheel',function(){
+		if ( handsFreeMode == true) { /* LOAD NEXT IMAGE */ };
+	});
+	document.getElementsByTagName('body')[0].addEventListener('oncontextmenu',function(){
+		if ( handsFreeMode == false) { /* EXIT HANDS FREE */ };
 	});
 			
-		});
+});
