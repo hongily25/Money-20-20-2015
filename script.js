@@ -32,14 +32,17 @@ $(document).ready(function() {
 			$('.draggable').mouseup(function() {
 				
 				var offset = $(this).offset().left;
+				var mytest = $(this).position();
+				//alert(mytest);
 				
 				
 			if(offset <= 700) {
-				alert('Regular offset: ' + offset);
+				//alert('Regular offset: ' + offset);
 				$(this).addClass('bigIMG');
 				$(this).css('position','absolute');
 				$(this).css('height','initial');
 				$(this).css('width','initial');
+				$(this).css('transform','rotate(90deg)');
 				var test2 = $(this).css('height');
 				//alert('test2: ' + test2);
 			}
@@ -48,7 +51,7 @@ $(document).ready(function() {
 				$(this).css('height','60px');
 				$(this).css('width','60px');
 				$(this).removeClass('bigIMG');
-				alert('Else offset: ' + offset);
+				//alert('Else offset: ' + offset);
 			}
 		});
 	
