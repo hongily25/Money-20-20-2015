@@ -38,7 +38,6 @@ $(document).ready(function() {
 				alert('Regular offset: ' + offset);
 				$(this).addClass('bigIMG');
 				$(this).css('position','absolute');
-				$(this).css('top','0');
 				$(this).css('height','initial');
 				$(this).css('width','initial');
 				var test2 = $(this).css('height');
