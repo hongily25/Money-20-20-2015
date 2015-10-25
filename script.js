@@ -12,9 +12,13 @@ $(document).ready(function() {
 				} 
 				
 				else if ($('#minus-button img').attr('src') == 'images/oowl_open_btn_normal.png') {
-					$('#wrapper').addClass('grid-img');
-				$('#container').addClass('shelf-img');
+					
+					$('#minus-button img').attr('src','images/oowl_close_btn_normal.png');
 					$('img').css("display","initial");
+					$('#wrapper').toggleClass('grid-img');
+				$('#container').toggleClass('shelf-img');
+					
+					
 				}
 				/*else {
         $('#minus-button img').attr('src','images/oowl_open_btn_normal.png');
@@ -23,10 +27,6 @@ $(document).ready(function() {
 				
     } */
 		
-				
-				
-		
-				
 			});
 			
 			$('.draggable').mouseup(function() {
@@ -47,6 +47,7 @@ $(document).ready(function() {
 				$(this).css('position','relative');
 				$(this).css('height','60px');
 				$(this).css('width','60px');
+				$(this).removeClass('bigIMG');
 				alert('Else offset: ' + offset);
 			}
 		});

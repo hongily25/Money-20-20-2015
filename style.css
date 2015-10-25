@@ -20,13 +20,14 @@ body {
 			float: right;
 		}
 
-		#container #furniture {
+		#container #furniture img {
 			height: 120px;
 			width: 120px;
-			display: inline;
-			
-			padding-bottom: 70px;
 		}
+
+#container div#furniture {
+	margin-top: -40px;
+}
 
 		#minus-button {
 		position: fixed;
