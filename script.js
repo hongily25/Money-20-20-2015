@@ -51,5 +51,23 @@ $(document).ready(function() {
 				alert('Else offset: ' + offset);
 			}
 		});
+	
+	var handsFreeMode = false;
+	
+	$('#hands-free-mode img').click( function() {
+		if (handsFreeMode) {
+		handsFreeMode = false;
+			
+		}
+		else 
+		{ handsFreeMode = true;
+		 /* LOAD FIRST IMAGE */
+		};
+	});
+	
+	$(document).click( function() {
+		if ( handsFreeMode == true) { /* LOAD NEXT IMAGE */ };		
+		
+	});
 			
 		});
