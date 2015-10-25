@@ -4,7 +4,7 @@ body {
 		}
 		
 		.grid-img {
-				background: url(images/new-grid-test.jpg);
+				background: url(assets/new-grid-test.jpg);
 		}
 		
 		#wrapper {
@@ -31,7 +31,7 @@ body {
 
 		#minus-button {
 		position: fixed;
-			bottom: 30px;
+			bottom: 0px;
 			right: 0px;
 			float: right;
 			z-index: 3;
@@ -40,7 +40,7 @@ body {
 		}
 		
 		.shelf-img {
-	background: url(images/new-shelf.jpg);
+	background: url(assets/new-shelf.jpg);
 		}
 		
 	#container {

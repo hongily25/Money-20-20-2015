@@ -1,9 +1,9 @@
 $(document).ready(function() {
 			
 			$('#minus-button').click(function() {
-				if ($('#minus-button img').attr('src') == 'images/oowl_close_btn_normal.png') {
+				if ($('#minus-button img').attr('src') == 'assets/oowl_close_btn_normal.png') {
 					
-        $('#minus-button img').attr('src','images/oowl_open_btn_normal.png');
+        $('#minus-button img').attr('src','assets/oowl_open_btn_normal.png');
 					//var test = $('.bigIMG').css('height') ;
 					//alert('test: ' + test);
 					$('img:not(.bigIMG)').toggle();
@@ -11,9 +11,9 @@ $(document).ready(function() {
 				$('#container').toggleClass("shelf-img");
 				} 
 				
-				else if ($('#minus-button img').attr('src') == 'images/oowl_open_btn_normal.png') {
+				else if ($('#minus-button img').attr('src') == 'assets/oowl_open_btn_normal.png') {
 					
-					$('#minus-button img').attr('src','images/oowl_close_btn_normal.png');
+					$('#minus-button img').attr('src','assets/oowl_close_btn_normal.png');
 					$('img').css("display","initial");
 					$('#wrapper').toggleClass('grid-img');
 				$('#container').toggleClass('shelf-img');
@@ -21,7 +21,7 @@ $(document).ready(function() {
 					
 				}
 				/*else {
-        $('#minus-button img').attr('src','images/oowl_open_btn_normal.png');
+        $('#minus-button img').attr('src','assets/oowl_open_btn_normal.png');
 				$('img:not(.bigIMG)').css('display','inline');
 			
 				
