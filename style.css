@@ -89,7 +89,10 @@ body {
 		}
 
 	#minus-button > img {
-		width: 50%;
-		height: 50%;
+		width: 7%;
+		height: 10%;
+		position: fixed;
+		bottom: 30px;
+		right: 0;
 	}
 			
