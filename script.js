@@ -1,5 +1,29 @@
 $(document).ready(function() {
-			
+	var calibrationState = {count: 0, x: 0, y: 0, ratio: 0};
+	window.addEventListener('click', function(e){
+		if(calibrationState.count == 0){
+			calibrationState.count++;
+			document.getElementsByClassName('calibration-up')[0].style.display = 'none';
+			document.getElementsByClassName('calibration-down')[0].style.display = 'block';
+			calibrationState.x = e.x;
+			calibrationState.y = e.y;
+		}else if(calibrationState.count == 1){
+			document.getElementsByClassName('calibration-down')[0].style.display = 'none';
+			document.getElementsByClassName('calibration-background')[0].style.display = 'none';
+			document.getElementsByTagName('body')[0].style.cursor = 'auto';
+			alert(Math.round(Math.sqrt(Math.pow(e.x-calibrationState.x, 2)+Math.pow(e.y-calibrationState.y, 2))));
+			calibrationState.count++;
+		}
+	});
+	
+	window.addEventListener('mousemove', function(e){
+		if(calibrationState.count < 2);
+		document.getElementsByClassName('calibration-up')[0].style.left = e.x+'px';
+		document.getElementsByClassName('calibration-up')[0].style.top = e.y+'px';
+		document.getElementsByClassName('calibration-down')[0].style.left = e.x+'px';
+		document.getElementsByClassName('calibration-down')[0].style.top = e.y+'px';
+	});
+	
 			$('#minus-button').click(function() {
 				if ($('#minus-button img').attr('src') == 'assets/oowl_close_btn_normal.png') {
 					
@@ -42,7 +66,10 @@ $(document).ready(function() {
 				$(this).css('position','absolute');
 				$(this).css('height','initial');
 				$(this).css('width','initial');
+				/*if ($(this).attr('alt') == 'rotate') {
 				$(this).css('transform','rotate(90deg)');
+				}
+				*/
 				var test2 = $(this).css('height');
 				//alert('test2: ' + test2);
 			}

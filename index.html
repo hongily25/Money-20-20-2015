@@ -1,14 +1,35 @@
 <html>
 <head>
 	
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script> 
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
+	<!--
+	<script src="jquery/jquery-ui.js"></script>
+	<script src="jquery/jquery-2.1.4.min.js"></script> -->
 	<link  rel="stylesheet" type="text/css"  href="style.css">
 	<script src="script.js"></script>
 
 	
 	<style>
-  #draggable { width: 150px; height: 150px; padding: 0.5em; }
+		body{cursor: none;}
+  	#draggable { width: 150px; height: 150px; padding: 0.5em; }
+		.calibration-background{
+			position: absolute;
+			width: 100%;
+			height: 150%;
+			margin-top: -10%;
+			background-color: black;
+			z-index: 5;
+		}
+		.calibration-up{
+			position: absolute;
+			z-index: 10;
+		}
+		.calibration-down{
+			position: absolute;
+			z-index: 10;
+			display: none;
+		}
   </style>
   <script>
   $(function() {
@@ -29,6 +50,9 @@ design - ux/ui
 	
 </head>
 <body>
+	<div class="calibration-background"></div>
+	<img class="calibration-down" src="assets/oowl_project_pointer_up.png">
+	<img class="calibration-up" src="assets/oowl_project_pointer_down.png">
 	<div id="hands-free-mode" style="z-index:3;position:fixed;left:0;bottom:0px;">
 	<img id="myo-img" src="assets/oowl_myo_btn_normal.png">
 	</div>
@@ -45,15 +69,39 @@ design - ux/ui
 	
 <div id="container" class="shelf-img">
 	<div class="row">
-		<img src="assets/image_001.png" class="draggable">
-		<img class="draggable" src="assets/image_002.png"><img class="draggable" src="assets/image_003.png"><img class="draggable" src="assets/oowl_cus_002.png">
+		<div class="img"><img alt="rotate" src="assets/image_001.png" class="draggable"></div>
+		<div class="img"><img alt="rotate" class="draggable" src="assets/image_002.png"></div>
+	<div class="img"><img alt="rotate" class="draggable" src="assets/image_003.png">
+	</div><img alt="rotate" class="draggable" src="assets/oowl_cus_002.png">
+</div>
+<div class="row" id="furniture">
+	<div class="img"><img class="draggable" src="assets/image_004.png">
 	</div>
-	<div class="row" id="furniture"><img class="draggable" src="assets/image_004.png"><img class="draggable" src="assets/image_005.png"><img class="draggable" src="assets/image_006.png">
+	<div class="img"><img class="draggable" src="assets/image_005.png">
 	</div>
-	<div class="row"><img class="draggable" src="assets/oowl_cus_001.png"><img class="draggable" src="oowl_cus_005.png"><img class="draggable" src="assets/oowl_cus_003.png"><img class="draggable" src="assets/oowl_cus_004.png">
+	<div class="img"><img class="draggable" src="assets/image_006.png">
 	</div>
-	<div class="row"><img class="draggable" src="assets/oowl_funi_005.png"><img class="draggable" src="assets/oowl_funi_006.png"><img class="draggable" src="assets/oowl_funi_007.png"><img class="draggable" src="assets/oowl_funi_008.png">
+</div>
+<div class="row">
+	<div class="img"><img alt="rotate" class="draggable" src="assets/oowl_cus_001.png">
 	</div>
+	<div class="img"><img alt="rotate" class="draggable" src="oowl_cus_005.png">
+	</div>
+	<div class="img"><img alt="rotate" class="draggable" src="assets/oowl_cus_003.png">
+	</div>
+	<div class="img"><img alt="rotate" class="draggable" src="assets/oowl_cus_004.png">
+	</div>
+</div>
+<div class="row">
+	<div class="img"><img class="draggable" src="assets/oowl_funi_005.png">
+	</div>
+	<div class="img"><img class="draggable" src="assets/oowl_funi_006.png">
+	</div>
+	<div class="img"><img class="draggable" src="assets/oowl_funi_007.png">
+	</div>
+	<div class="img"><img class="draggable" src="assets/oowl_funi_008.png">
+	</div>
+</div>
 </div>
 </div>
 		
