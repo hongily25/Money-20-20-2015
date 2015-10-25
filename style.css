@@ -82,3 +82,14 @@ body {
 		.row div {
 			display: inline;
 		}
+
+		#hands-free-mode img {
+			width: 70%;
+			height: 10%;
+		}
+
+	#minus-button > img {
+		width: 50%;
+		height: 50%;
+	}
+			
